@@ -11,7 +11,7 @@ public class Payment {
         return price;
     }
 
-    public PaymentTypegit  getPaymentType() {
+    public PaymentType  getPaymentType() {
         return paymentType;
     }
 
