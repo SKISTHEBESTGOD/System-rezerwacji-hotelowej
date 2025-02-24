@@ -13,6 +13,5 @@ public abstract class User {
         return firstName + " " + lastName;
     }
 
-    // Metoda wyświetlająca menu – implementowana osobno w klasach Customer i Admin
     public abstract void displayMenu(Hotel hotel, Scanner scanner);
 }

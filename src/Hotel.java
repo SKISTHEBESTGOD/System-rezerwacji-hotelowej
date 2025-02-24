@@ -10,13 +10,11 @@ public class Hotel {
         reservations = new ArrayList<>();
     }
 
-    // Metoda dodająca pokój do hotelu
     public void addRoom(Room room) {
         rooms.add(room);
         System.out.println("Pokój dodany: " + room);
     }
 
-    // Metoda usuwająca pokój na podstawie numeru
     public void removeRoom(int roomNumber) {
         Room roomToRemove = null;
         for (Room room : rooms) {
@@ -33,7 +31,6 @@ public class Hotel {
         }
     }
 
-    // Zwraca listę dostępnych pokoi
     public List<Room> getAvailableRooms() {
         List<Room> availableRooms = new ArrayList<>();
         for (Room room : rooms) {
@@ -43,15 +40,12 @@ public class Hotel {
         }
         return availableRooms;
     }
-
-    // Dokonuje rezerwacji, oznaczając pokój jako niedostępny
     public void makeReservation(Reservation reservation) {
         reservation.getRoom().setAvailable(false);
         reservations.add(reservation);
         System.out.println("Rezerwacja dokonana: " + reservation);
     }
 
-    // Anuluje rezerwację dla podanego klienta
     public void cancelReservation(Customer customer) {
         Reservation reservationToCancel = null;
         for (Reservation reservation : reservations) {
@@ -69,7 +63,6 @@ public class Hotel {
         }
     }
 
-    // Wyświetla wszystkie rezerwacje
     public void listReservations() {
         if (reservations.isEmpty()) {
             System.out.println("Brak rezerwacji.");
@@ -80,7 +73,6 @@ public class Hotel {
         }
     }
 
-    // Wyświetla wszystkie pokoje
     public void listRooms() {
         for (Room room : rooms) {
             System.out.println(room);
