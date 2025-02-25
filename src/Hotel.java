@@ -31,14 +31,17 @@ public class Hotel {
         }
     }
 
-    public List<Room> getAvailableRooms() {
-        List<Room> availableRooms = new ArrayList<>();
+    public List<Room> getAllRooms() {
+        return rooms;
+    }
+
+    public Room getRoomByNumber(int roomNumber) {
         for (Room room : rooms) {
-            if (room.isAvailable()) {
-                availableRooms.add(room);
+            if (room.getRoomNumber() == roomNumber) {
+                return room;
             }
         }
-        return availableRooms;
+        return null;
     }
 
     public void makeReservation(Reservation reservation) {
@@ -78,5 +81,9 @@ public class Hotel {
         for (Room room : rooms) {
             System.out.println(room);
         }
+    }
+
+    public List<Reservation> getReservations() {
+        return reservations;
     }
 }

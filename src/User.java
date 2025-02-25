@@ -12,5 +12,6 @@ public abstract class User {
     public String getFullName() {
         return firstName + " " + lastName;
     }
+
     public abstract void displayMenu(Hotel hotel, Scanner scanner);
 }
