@@ -1,3 +1,5 @@
+package Ogorzałek;
+
 import java.util.Scanner;
 
 public class Admin extends User {
