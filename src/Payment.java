@@ -1,5 +1,3 @@
-package Ogorzałek;
-
 public class Payment {
     private double price;
     private PaymentType paymentType;

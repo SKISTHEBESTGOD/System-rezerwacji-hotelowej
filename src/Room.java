@@ -1,5 +1,3 @@
-package Ogorzałek;
-
 public class Room {
     private int roomNumber;
     private RoomType roomType;

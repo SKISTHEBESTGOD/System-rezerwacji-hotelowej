@@ -1,5 +1,3 @@
-package Ogorzałek;
-
 import java.time.LocalDate;
 
 public class BookingService {
