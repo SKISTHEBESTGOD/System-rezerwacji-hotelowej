@@ -1,5 +1,4 @@
 package Ogorzałek;
-
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
@@ -15,11 +14,11 @@ public class Customer extends User {
         int choice;
         do {
             System.out.println("\n--- Menu Klienta ---");
-            System.out.println("Wpisz 1, żeby wyświetlić dostępne pokoje");
-            System.out.println("Wpisz 2, żeby zarezerwować pokój");
-            System.out.println("Wpisz 3, żeby anulować rezerwację");
-            System.out.println("Wpisz 4, żeby wyświetlić historię rezerwacji");
-            System.out.println("Wpisz 0, żeby powrócić do menu głównego");
+            System.out.println("1. Wyświetl dostępne pokoje");
+            System.out.println("2. Zarezerwuj pokój");
+            System.out.println("3. Anuluj rezerwację");
+            System.out.println("4. Historia rezerwacji");
+            System.out.println("0. Powrót do menu głównego");
             System.out.print("Wprowadź swój wybór: ");
             choice = Integer.parseInt(scanner.nextLine());
 
