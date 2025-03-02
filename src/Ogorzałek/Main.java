@@ -35,6 +35,17 @@ public class Main {
                 case 4:
                     advancedSystemOptions(hotel, scanner);
                     break;
+                case 5:
+                    searchReservations(hotel, scanner);
+                    break;
+                case 6:
+                    System.out.println("\n--- Lista Wszystkich Pokoi ---");
+                    hotel.listRooms();
+                    break;
+                case 7:
+                    System.out.println("\n--- Lista Wszystkich Rezerwacji ---");
+                    hotel.listReservations();
+                    break;
                 case 0:
                     System.out.println("Wyjście z systemu. Do widzenia!");
                     exit = true;
@@ -51,8 +62,11 @@ public class Main {
         System.out.println("Wybierz opcję:");
         System.out.println("1. Klient");
         System.out.println("2. Administrator");
-        System.out.println("3. Wyświetl statystyki hotelu");
+        System.out.println("3. Wyświetl podstawowe statystyki hotelu");
         System.out.println("4. Zaawansowane opcje systemowe");
+        System.out.println("5. Wyszukaj rezerwacje");
+        System.out.println("6. Wyświetl wszystkie pokoje");
+        System.out.println("7. Wyświetl wszystkie rezerwacje");
         System.out.println("0. Wyjście");
     }
 
@@ -67,7 +81,7 @@ public class Main {
     }
 
     private static void displayHotelStats(Hotel hotel) {
-        System.out.println("\n--- Statystyki Hotelu ---");
+        System.out.println("\n--- Podstawowe Statystyki Hotelu ---");
         System.out.println("Liczba pokoi: " + hotel.getAllRooms().size());
         System.out.println("Liczba rezerwacji: " + hotel.getReservations().size());
     }
@@ -103,7 +117,7 @@ public class Main {
             room.setAvailable(true);
         }
         hotel.getReservations().clear();
-        System.out.println("System został zresetowany: wszystkie rezerwacje zostały anulowane, a wszystkie pokoje są dostępne.");
+        System.out.println("System został zresetowany: wszystkie rezerwacje anulowane, a wszystkie pokoje są dostępne.");
     }
 
     private static void displayDetailedHotelStats(Hotel hotel) {
@@ -121,6 +135,51 @@ public class Main {
         System.out.println("Zarezerwowane pokoje: " + reservedCount);
     }
 
+    private static void searchReservations(Hotel hotel, Scanner scanner) {
+        boolean back = false;
+        while (!back) {
+            System.out.println("\n--- Wyszukiwanie Rezerwacji ---");
+            System.out.println("Wybierz kryterium wyszukiwania:");
+            System.out.println("1. Wyszukaj według nazwiska klienta");
+            System.out.println("2. Wyszukaj według numeru pokoju");
+            System.out.println("0. Powrót do głównego menu");
+            int searchChoice = readInt("Wprowadź swój wybór (np. 1):", scanner);
+
+            switch (searchChoice) {
+                case 1:
+                    String name = readNonEmptyString("Wprowadź część nazwiska klienta (np. Kowalski):", scanner);
+                    var resultsByName = hotel.searchReservationsByCustomer(name);
+                    if (resultsByName.isEmpty()) {
+                        System.out.println("Nie znaleziono rezerwacji dla klienta zawierającego: " + name);
+                    } else {
+                        System.out.println("Znalezione rezerwacje:");
+                        for (Reservation res : resultsByName) {
+                            System.out.println(res);
+                        }
+                    }
+                    break;
+                case 2:
+                    int roomNumber = readInt("Wprowadź numer pokoju (np. 101):", scanner);
+                    var resultsByRoom = hotel.searchReservationsByRoom(roomNumber);
+                    if (resultsByRoom.isEmpty()) {
+                        System.out.println("Nie znaleziono rezerwacji dla pokoju numer: " + roomNumber);
+                    } else {
+                        System.out.println("Znalezione rezerwacje:");
+                        for (Reservation res : resultsByRoom) {
+                            System.out.println(res);
+                        }
+                    }
+                    break;
+                case 0:
+                    System.out.println("Powrót do głównego menu...");
+                    back = true;
+                    break;
+                default:
+                    System.out.println("Nieprawidłowy wybór. Spróbuj ponownie.");
+            }
+        }
+    }
+
     private static int readInt(String prompt, Scanner scanner) {
         int number;
         while (true) {
@@ -131,34 +190,6 @@ public class Main {
                 return number;
             } catch (NumberFormatException e) {
                 System.out.println("Błąd: wprowadź poprawną liczbę całkowitą (np. 1, 2, 3).");
-            }
-        }
-    }
-
-    private static double readDouble(String prompt, Scanner scanner) {
-        double number;
-        while (true) {
-            System.out.print(prompt + " ");
-            String input = scanner.nextLine();
-            try {
-                number = Double.parseDouble(input);
-                return number;
-            } catch (NumberFormatException e) {
-                System.out.println("Błąd: wprowadź poprawną liczbę (np. 123.45).");
-            }
-        }
-    }
-
-    private static LocalDate readLocalDate(String prompt, Scanner scanner) {
-        LocalDate date;
-        while (true) {
-            System.out.print(prompt + " ");
-            String input = scanner.nextLine();
-            try {
-                date = LocalDate.parse(input);
-                return date;
-            } catch (DateTimeParseException e) {
-                System.out.println("Błąd: wprowadź datę w formacie RRRR-MM-DD (np. 2025-12-31).");
             }
         }
     }
