@@ -87,4 +87,25 @@ public class Hotel {
     public List<Reservation> getReservations() {
         return reservations;
     }
+
+
+    public List<Reservation> searchReservationsByCustomer(String customerName) {
+        List<Reservation> results = new ArrayList<>();
+        for (Reservation res : reservations) {
+            if (res.getCustomer().getFullName().toLowerCase().contains(customerName.toLowerCase())) {
+                results.add(res);
+            }
+        }
+        return results;
+    }
+
+    public List<Reservation> searchReservationsByRoom(int roomNumber) {
+        List<Reservation> results = new ArrayList<>();
+        for (Reservation res : reservations) {
+            if (res.getRoom().getRoomNumber() == roomNumber) {
+                results.add(res);
+            }
+        }
+        return results;
+    }
 }
