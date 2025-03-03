@@ -11,16 +11,19 @@
 **Co robią?**
 
 - Scanner:
-- Umożliwia wprowadzenie danych z klawiatury (np. numeru pokoju, daty, kwoty płatności) oraz zamianę ich na odpowiednie typy danych (np. liczby całkowite, daty).
+Umożliwia wprowadzenie danych z klawiatury (np. numeru pokoju, daty, kwoty płatności) oraz zamianę ich na odpowiednie typy danych (np. liczby całkowite, daty).
 
 - LocalDate:
-- Umożliwia operacje na datach, takie jak porównywanie dat, dodawanie lub odejmowanie dni, miesiący, lat oraz sprawdzanie poprawności zakresu dat (np. dat zameldowania i wymeldowania).
+Umożliwia operacje na datach, takie jak porównywanie dat, dodawanie lub odejmowanie dni, miesiący, lat oraz sprawdzanie poprawności zakresu dat (np. dat zameldowania i wymeldowania).
 
-- List: Używany do przechowywania i zarządzania listami obiektów, takich jak pokoje (Room) i rezerwacje (Reservation).
+- List:
+Używany do przechowywania i zarządzania listami obiektów, takich jak pokoje (Room) i rezerwacje (Reservation).
 
-- ArrayList: Zapewnia metody do dodawania, usuwania i manipulowania elementami w liście. Używana do przechowywania listy pokoi oraz rezerwacji w systemie hotelowym.
+- ArrayList:
+Zapewnia metody do dodawania, usuwania i manipulowania elementami w liście. Używana do przechowywania listy pokoi oraz rezerwacji w systemie hotelowym.
 
-- DateTimeParseException: Używana do obsługi błędów związanych z nieprawidłowym formatem daty wprowadzanej przez użytkownika. Pomaga w walidacji i zapewnieniu, że daty zameldowania i wymeldowania są poprawnie sformatowane.
+- DateTimeParseException:
+Używana do obsługi błędów związanych z nieprawidłowym formatem daty wprowadzanej przez użytkownika. Pomaga w walidacji i zapewnieniu, że daty zameldowania i wymeldowania są poprawnie sformatowane.
 
 ## RoomType
 **Co to jest:**  
