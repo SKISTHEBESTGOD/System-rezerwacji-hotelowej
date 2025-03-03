@@ -13,11 +13,11 @@ public class Admin extends User {
         int choice;
         do {
             System.out.println("\n--- Menu Administratora ---");
-            System.out.println("1. Dodaj pokój");
-            System.out.println("2. Usuń pokój");
-            System.out.println("3. Lista wszystkich pokoi");
-            System.out.println("4. Lista wszystkich rezerwacji");
-            System.out.println("0. Powrót do menu głównego");
+            System.out.println("Wpisz 1, żeby dodać pokój");
+            System.out.println("Wpisz 2, żeby usunąć pokój");
+            System.out.println("Wpisz 3, żeby zobaczyć listę wszystkich pokoi");
+            System.out.println("Wpisz 4, żeby zobaczyć listę wszystkich rezerwacji");
+            System.out.println("Wpisz 0, żeby powrócić do menu głównego");
             System.out.print("Wprowadź swój wybór: ");
             choice = Integer.parseInt(scanner.nextLine());
 
@@ -25,7 +25,7 @@ public class Admin extends User {
                 case 1:
                     System.out.print("Podaj numer pokoju: ");
                     int roomNumber = Integer.parseInt(scanner.nextLine());
-                    System.out.println("Wybierz typ pokoju:");
+                    System.out.println("Wybierz typ pokoju(Wpisz odpowiednią cyfrę):");
                     System.out.println("1. SINGLE");
                     System.out.println("2. DOUBLE");
                     System.out.println("3. APARTMENT");
