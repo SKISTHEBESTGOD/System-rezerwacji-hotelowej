@@ -6,7 +6,6 @@
 - java.util.LocalDate
 - java.util.List
 - java.util.ArrayList
-- java.time.format.DateTimeParseException
 
 **Co robią?**
 
@@ -22,8 +21,6 @@ Używany do przechowywania i zarządzania listami obiektów, takich jak pokoje (
 - ArrayList:
 Zapewnia metody do dodawania, usuwania i manipulowania elementami w liście. Używana do przechowywania listy pokoi oraz rezerwacji w systemie hotelowym.
 
-- DateTimeParseException:
-Używana do obsługi błędów związanych z nieprawidłowym formatem daty wprowadzanej przez użytkownika. Pomaga w walidacji i zapewnieniu, że daty zameldowania i wymeldowania są poprawnie sformatowane.
 
 ## RoomType
 **Co to jest:**  
