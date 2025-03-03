@@ -14,11 +14,11 @@ public class Customer extends User {
         int choice;
         do {
             System.out.println("\n--- Menu Klienta ---");
-            System.out.println("1. Wyświetl dostępne pokoje");
-            System.out.println("2. Zarezerwuj pokój");
-            System.out.println("3. Anuluj rezerwację");
-            System.out.println("4. Historia rezerwacji");
-            System.out.println("0. Powrót do menu głównego");
+            System.out.println("Wpisz 1, żeby wyświetlić dostępne pokoje");
+            System.out.println("Wpisz 2, żeby zarezerwować pokój");
+            System.out.println("Wpisz 3, aby anulować rezerwację");
+            System.out.println("Wpisz 4, aby otworzyć historię rezerwacji");
+            System.out.println("Wpisz 0, aby powrócić do menu głównego");
             System.out.print("Wprowadź swój wybór: ");
             choice = Integer.parseInt(scanner.nextLine());
 
@@ -43,7 +43,7 @@ public class Customer extends User {
                     LocalDate checkOut = LocalDate.parse(scanner.nextLine());
                     System.out.print("Podaj kwotę płatności: ");
                     double amount = Double.parseDouble(scanner.nextLine());
-                    System.out.println("Wybierz metodę płatności:");
+                    System.out.println("Wybierz metodę płatności(Wpisz odpowiedni numer):");
                     System.out.println("1. CASH");
                     System.out.println("2. BLIK");
                     System.out.println("3. CARD");
