@@ -59,7 +59,7 @@ public class Main {
 
     private static void displayMainMenu() {
         System.out.println("\n--- System Rezerwacji Hotelowej ---");
-        System.out.println("Wybierz opcję:");
+        System.out.println("Wybierz opcję(Podaj odpowiednia liczbę):");
         System.out.println("1. Klient");
         System.out.println("2. Administrator");
         System.out.println("3. Wyświetl podstawowe statystyki hotelu");
